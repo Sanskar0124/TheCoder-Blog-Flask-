@@ -1,0 +1,18 @@
+{
+    "params":
+    {
+        "blog_name":"TheCoder",
+        "tag_line": "Heaven for programers",
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/thecoder",
+        "prod_uri": "mysql://root:@localhost/thecoder",
+        "gmail_user": "sansakhraliya@gmail.com",
+        "gmail_password": "superhero",
+        "fb_url": "https://facebook.com/sanskarSakhareliya",
+        "tw_url": "https://twitter.com/sanskarSakhareliya",
+        "gh_url": "https://github.com/sanskarSakhareliya",
+        "about_text": "Hie my name is sanskar and i am good boy.",
+        "num_of_posts": 5
+    }
+
+}
