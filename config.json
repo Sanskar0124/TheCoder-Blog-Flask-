@@ -12,7 +12,11 @@
         "tw_url": "https://twitter.com/sanskarSakhareliya",
         "gh_url": "https://github.com/sanskarSakhareliya",
         "about_text": "Hie my name is sanskar and i am good boy.",
-        "num_of_posts": 5
+        "num_of_posts": 2,
+        "login_img": "login.jpg",
+        "admin_user": "sanskar",
+        "admin_password": "sanskar0124",
+        "upload_location": "C:\\Users\\sansa\\OneDrive\\Desktop\\MyWork\\Practice\\FlaskPractise\\Flask-tut\\static"
     }
 
 }
