@@ -50,8 +50,6 @@ class Posts(db.Model):
 def home():
     posts = Posts.query.filter_by().all()
     last = math.ceil(len(posts)/int(params['num_of_posts']))
-    #[0:params['num_of_posts']]
-    #posts = posts[]
     page = request.args.get('page')
     if(not str(page).isnumeric()):
         page = 1
@@ -69,13 +67,13 @@ def home():
         prev = "/?page="+ str(page - 1)
         next = "/?page="+ str(page + 1)
 
-
-    
     return render_template('index.html', params=params, posts=posts, prev=prev, next=next)
+
 
 @app.route('/about')
 def about():
     return render_template('about.html', params= params)
+
 
 @app.route('/dashboard', methods = ["GET", "POST"])
 def dashboard():
@@ -125,6 +123,7 @@ def edit(sno):
         post = Posts.query.filter_by(sno=sno).first()
         return render_template('edit.html', params= params, post=post)
 
+
 @app.route('/uploader', methods = ['GET', 'POST'])
 def uploader():
     if ('user' in session and session['user'] == params['admin_user']):
@@ -133,10 +132,12 @@ def uploader():
             f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename) ))
             return "Uploaded Succesfully"
 
+
 @app.route('/logout')
 def logout():
     session.pop('user')
     return redirect('/dashboard')
+
 
 @app.route('/delete/<string:sno>')
 def delete(sno):
@@ -145,6 +146,7 @@ def delete(sno):
         db.session.delete(post)
         db.session.commit()
     return redirect('/dashboard')
+
 
 @app.route('/contact', methods = ['GET', 'POST'])
 def contact():
@@ -163,6 +165,7 @@ def contact():
                         body = message + "\n" + phone_num
                         )
     return render_template('contact.html', params= params)
+
 
 @app.route('/post/<string:post_slug>', methods =['GET'])
 def post_route(post_slug):
